@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Game</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+<style>
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+    }
+    .background-image{
+    background-image: url("background.jpg");
+    min-height: 460px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+    p,textarea{
+        font-size: 20px;
+    }
+    textarea{
+        width: 40%;
+        padding: 20px;
+        height: 30ex;
+    }
+    #redo{
+        display: none;
+    }
+    .lol{
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .popup{
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        position: absolute;
+        top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        display: none;
+    }
+    .poppop{
+        width: 500px;
+        height: 300px;
+        background-color: white;
+        border-radius: 10px;
+        position: relative;;
+    }
+    .close{
+        position: absolute;
+        top: 0;
+        right: 14px;
+        font-size: 42px;
+        transform: rotate(45deg);
+    }
+    /* .best{
+        position: absolute;
+        left: 30px;
+        top: 20px;
+    } */
+       #timed{
+            font-size: 30px;
+        }
+    #show{
+        font-size: 25px;
+    }
+        
+    @media (min-width:320px) and (max-width:480px){
+        #timed{
+            font-size: 21px;
+        }
+        #show{
+            font-size: 20px;
+        }
+        .phone{
+            font-size: 20px;
+        }
+        textarea{
+            width: 70%;
+            padding: 10px;
+            height: 30ex;
+    }
+     }
+
+</style>
+<body class="background-image" oncontextmenu="return ture">
+    <div class="container lol">
+        <div class="alert alert-warning" style="font-size: 20px;">
+        <span id="timed">Hello, good morning ☀️</span>   <button onclick="popUp()" id="show" class="btn btn-warning">User</button>
+        </div>
+    </div>
+    <div class="container">
+    <div class="row">
+        <div class="col-12 col-md-12 col-lg-12">
+    <h1>Typeing game</h3>
+    </div>
+    <h2>
+        <div style="margin-bottom: 10px;" class="row mb-20">
+            <div class="col-12 col-md-12 col-lg-12 mb-40">
+               <div class="btn-group mb-20 best">
+                 <span class="btn btn-dark phone">Your best score</span>
+                 <span id="scored" class="btn btn-danger phone">0</span>
+              </div>
+            </div>
+        </div>
+        <div class="row">
+     <div class="col-12 col-md-12 col-lg-12">
+        <!-- <button class="btn btn-primary" onclick="start()" id="">Start</button> -->
+         <div class="btn-group">
+        <span class="btn btn-dark text-white phone">Score</span>
+        <span class="btn btn-danger text-white phone" id="score">0</span>
+        </div>
+        <div class="btn-group">
+        <span class="btn btn-dark text-white phone" >time laft</span>
+        <span class="btn btn-danger text-white phone" id="time"></span>
+        </div>
+        <button class="btn btn-primary phone" onclick="skip()" id="skiped">Skip</button>
+        <button class="btn btn-primary phone" onclick="relode()" id="redo">restart</button>
+        </div>
+        </div>
+    </h2>
+    </div>
+    </div>
+    <h3 id="random" oncopy="return true"></h3>
+    <h1 style="margin-top: 40px; display: none; padding: 8px; border-top-right-radius: 19px; border-bottom-left-radius: 19px;" class="lose text-white bg-danger">Time is run out, you lose</h1>
+    <textarea onpaste="return true" id="type" placeholder=""></textarea>
+
+    <div class="popup">
+        <div class="poppop">
+            <h1 style="margin:30px 0px 6px 0px; ">What is your name ?</h1>
+            <div class="close">+</div>
+            <input id="name" type="text">
+            <button id="show" class="btn btn-warning showed">ok</button>
+        </div>
+    </div>
+</body>
+<script src="project.js"></script>
+</html>
